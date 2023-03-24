@@ -1,0 +1,24 @@
+public class PrimeNum {
+	    public static boolean isPrime(int P) {
+	        if (P <= 1) {
+	            return false;
+	        }
+	        for (int i = 2; i <= Math.sqrt(P); i++) {
+	            if (P % i == 0) {
+	                return false;
+	            }
+	        }
+	        return true;
+	    }
+
+	    public static void main(String[] args) {
+	        int[] primes = new int[500];
+	        int count = 0;
+	        for (int X = 1; X <= 500; X++) {
+	            if (isPrime(X)) {
+	                primes[count++] =X;
+	            }
+	        }
+	        System.out.println("THE FOLLOWING ARE PRIME NUMBERS BETWEEN 1 & 500:");
+	        for (int X = 0; X < count; X++) {
+	            System.out.print(primes[X] + " ");
